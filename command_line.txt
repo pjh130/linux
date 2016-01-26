@@ -1,0 +1,39 @@
+一、压缩和解压文件
+	压缩文件
+		1) 通用
+			tar –cvf jpg.tar *.jpg //将目录里所有jpg文件打包成tar.jpg
+		2) tar调用gzip
+			tar -czf all.tar.gz *.jpg
+		3) tar调用bzip2
+			tar -cjf all.tar.bz2 *.jpg
+		4) tar调用compress
+			tar -cZf all.tar.Z *.jpg
+	解压文件
+		1) 对于.tar结尾的文件
+			tar -xf all.tar
+		2) 对于.gz结尾的文件
+			gzip -d all.gz 或者 gunzip all.gz
+		3)对于.tgz或.tar.gz结尾的文件
+			tar -xzf all.tar.gz 或者 tar -xzf all.tgz
+		4)对于.bz2结尾的文件
+			bzip2 -d all.bz2 或者 bunzip2 all.bz2
+		5)对于tar.bz2结尾的文件
+			tar -xjf all.tar.bz2
+		6)对于.Z结尾的文件
+			uncompress all.Z
+
+
+二、磁盘空间
+	查看磁盘剩余空间
+		df -hl 
+		
+	查看单个目录大小
+		du -bs dir_name
+
+		
+三、网络信息
+	使用netstat命令查看端口占用情况
+		netstat -tlnp
+	过滤
+	 netstat -tlnp | grep 44444
+
